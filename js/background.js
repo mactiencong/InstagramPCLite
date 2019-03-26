@@ -7,11 +7,13 @@ function mofifyUserAgent(details){
     for(let index = 0; index < requestHeaders.length; index++) {
         if( requestHeaders[index].name.toUpperCase() === 'USER-AGENT' ) {
             requestHeaders[index].value = USER_AGENT
-            isHeaderModified
+            isHeaderModified = true
             break
         }
     }
-    if(!isHeaderModified) requestHeaders[requestHeaders.length] = {name: 'User-Agent', value: USER_AGENT}
+    if(!isHeaderModified) {
+        requestHeaders.push({name: 'User-Agent', value: USER_AGENT})
+    }
     return {requestHeaders: requestHeaders}
 }
 
