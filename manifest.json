@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Instagram PC Upload",
+  "short_name": "Instagram PC Upload",
+  "description": "Instagram PC Upload",
+  "version": "1.0.0",
+  "author": "matico",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "webNavigation",
+    "*://*.instagram.com/*"
+  ],
+  "background": {
+    "scripts": [
+        "js/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action":{
+    "default_icon": "icon/enable.png"
+  }
+}
