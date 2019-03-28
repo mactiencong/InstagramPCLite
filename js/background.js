@@ -31,14 +31,14 @@ function disable(){
     reloadInstagramTab()
 }
 
-let isEnable = true
+let isEnable = false
 chrome.browserAction.onClicked.addListener(function(tab) {
     if(isEnable) {
         disable()
     } else enable()
 })
 
-if(isEnable) enable()
+disable()
 
 function setIcon(path){
     chrome.browserAction.setIcon({
